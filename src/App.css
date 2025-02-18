@@ -1,38 +1,69 @@
+body {
+  background-color: black;
+  margin: 0;
+  overflow: hidden; /* Prevent scrolling */
+}
+
 .App {
-  text-align: center;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  overflow: hidden; /* Prevent scrolling */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  height: auto;
+  z-index: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Score {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  font-weight: bold;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 40px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.hamburger {
+  width: 40px;
+  height: 40px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-around;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 60px); /* Adjusted to account for the header height */
+  overflow: hidden; /* Prevents scrollbars */
+  z-index: 0; /* Ensure the images are inside the main container */
+}
+
+.random-image {
+  position: absolute;
+  cursor: pointer;
+}
+
+.CPS {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  font-size: 20px;
+  font-weight: bold;
 }
